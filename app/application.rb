@@ -4,8 +4,9 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path=="/songs"
-      resp.write "You requested the songs"
+    if req.path=="/items"
+      item = req.path["items"]
+      resp.write "#{item.price}"
     else
       resp.write "Route not found"
       resp.status = 404
