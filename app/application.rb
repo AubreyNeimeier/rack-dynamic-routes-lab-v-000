@@ -10,7 +10,7 @@ class Application
 
       if @@items.include? (item_obj)
         resp.write "#{item_obj.price}"
-      elsif @@items.!include? (item_obj)
+      elsif !@@items.include? (item_obj)
         resp.write "Item not found"
         resp.status = 400
       else
