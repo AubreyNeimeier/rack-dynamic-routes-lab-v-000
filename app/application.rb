@@ -4,6 +4,8 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
+    binding.pry
+
     if req.path=="/items"
       if Item.all.include? (req.path["items"])
         item = req.path["items"]
