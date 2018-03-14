@@ -9,8 +9,7 @@ class Application
 
     if req.path=="/items"
       item = req.path.split("/items/").last
-      if @@items.include? (req.path["items"])
-        item = req.path["items"]
+      if @@items.include? (item)
         resp.write "#{item.price}"
       else
         resp.write "That item does not exist"
