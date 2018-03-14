@@ -12,7 +12,7 @@ class Application
       if @@items.include? (item_obj)
         resp.write "#{item_obj.price}"
       else
-        resp.write "That item does not exist"
+        resp.write "Item not found"
         resp.status = 400
       end
 
