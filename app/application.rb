@@ -9,8 +9,8 @@ class Application
 
     if req.path=="/items"
       item = req.path.split("/items/").last
-      if @@items.include? (item)
-        item_obj = @@items.find {|x| x.name == item}
+      item_obj = @@items.find {|x| x.name == item}
+      if @@items.include? (item_obj)
         resp.write "#{item_obj.price}"
       else
         resp.write "That item does not exist"
