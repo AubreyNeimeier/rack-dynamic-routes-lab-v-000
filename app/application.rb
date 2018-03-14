@@ -8,7 +8,7 @@ class Application
     binding.pry
 
     if req.path=="/items"
-      if Item.all.include? (req.path["items"])
+      if @@items.include? (req.path["items"])
         item = req.path["items"]
         resp.write "#{item.price}"
       else
