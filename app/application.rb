@@ -4,10 +4,10 @@ class Application
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
-    
+
       item = req.path.split("/items/").last
       item_obj = @@items.find {|x| x.name == item}
-      
+
       if @@items.include? (item_obj)
         resp.write "#{item_obj.price}"
       elsif @@items.!include? (item_obj)
