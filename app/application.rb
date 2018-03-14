@@ -4,6 +4,7 @@ class Application
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
+    binding.pry
 
       item = req.path.split("/items/").last
       item_obj = @@items.find {|x| x.name == item}
