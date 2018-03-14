@@ -5,7 +5,6 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    binding.pry
 
     if req.path=="/items"
       item = req.path.split("/items/").last
